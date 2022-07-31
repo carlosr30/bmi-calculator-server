@@ -18,7 +18,7 @@ export const calculateBMIValidator = async (
                 is: "METRIC",
                 then: Joi.number().greater(0).required(),
                 otherwise: Joi.when("heightSecondary", {
-                    is: "0",
+                    is: 0,
                     then: Joi.number().integer().min(1).required(),
                     otherwise: Joi.number().integer().min(0).required(),
                 }),
