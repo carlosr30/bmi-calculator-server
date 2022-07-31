@@ -1,10 +1,12 @@
 import {} from "dotenv"
 
 import bmiRoutes from "./v1/routes/bmi.routes"
+import cors from "cors"
 import express from "express"
 
 const server = express()
 
+server.use(cors())
 server.use(express.json())
 server.use("/api/v1/", bmiRoutes)
 
