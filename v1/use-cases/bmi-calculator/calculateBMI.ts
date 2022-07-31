@@ -1,3 +1,4 @@
 export const calculateBMI = (height: number, weight: number) => {
-    return parseFloat((weight / (height * height)).toFixed(1))
+    const heightInM = height / 100;
+    return parseFloat((weight / (heightInM * heightInM)).toFixed(1))
 }

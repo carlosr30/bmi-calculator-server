@@ -1,8 +1,8 @@
-export const convertFtInToMeter = (
+export const convertFtInToCentimeter = (
     ftValue: number,
     inValue: number
 ): number => {
-    return Math.round((ftValue * 0.3048 + inValue * 0.0254) * 100) / 100;
+    return Math.round((ftValue * 30.48 + inValue * 2.54) * 100) / 100;
 }
 
 export const convertPoundsToKg = (value: number): number => {

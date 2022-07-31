@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express"
 
 import { calculateBMI } from "../../use-cases/bmi-calculator/calculateBMI.js"
-import { convertMeasurementToMetric } from "../../use-cases/bmi-calculator/convertMeasurementToMKg"
+import { convertMeasurementToMetric } from "../../use-cases/bmi-calculator/convertMeasurementToMetric"
 import { identifyBMIClassification } from "../../use-cases/bmi-calculator/identifyBMIClassification.js"
 
 export const calculateBMIController = async (

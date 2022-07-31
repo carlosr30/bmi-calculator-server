@@ -1,16 +1,16 @@
-import { convertMeasurementToMetric } from "../../../use-cases/bmi-calculator/convertMeasurementToMKg"
+import { convertMeasurementToMetric } from "../../../use-cases/bmi-calculator/convertMeasurementToMetric"
 import { expect } from "chai"
 
 describe("Convert Measurement to Metric", () => {
     it("Should convert measurement to Metric", () => {
         const { height, weight } = convertMeasurementToMetric({
             measurementUnit: "METRIC",
-            height: 1.6,
+            height: 160,
             weight: 95,
         })
 
         
-        expect(height).to.be.equal(1.6)
+        expect(height).to.be.equal(160)
         expect(weight).to.be.equal(95)
     })
 
@@ -22,7 +22,7 @@ describe("Convert Measurement to Metric", () => {
             weight: 209.439,
         })
         
-        expect(height).to.be.equal(1.6)
+        expect(height).to.be.equal(160.02)
         expect(weight).to.be.equal(95)
     })
 })
