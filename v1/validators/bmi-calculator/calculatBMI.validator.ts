@@ -15,7 +15,7 @@ export const calculateBMIValidator = async (
                 .allow(...bmiConfig.classifications)
                 .required(),
             height: Joi.when("measurementUnit", {
-                is: "M_AND_KG",
+                is: "METRIC",
                 then: Joi.number().greater(0).required(),
                 otherwise: Joi.when("heightSecondary", {
                     is: "0",
@@ -28,7 +28,7 @@ export const calculateBMIValidator = async (
                 .min(0)
                 .max(11)
                 .when("measurementUnit", {
-                    is: "FT_IN_AND_LBS",
+                    is: "STANDARD",
                     then: Joi.required(),
                     otherwise: Joi.disallow(),
                 }),

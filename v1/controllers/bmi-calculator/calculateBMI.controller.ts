@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express"
 
 import { calculateBMI } from "../../use-cases/bmi-calculator/calculateBMI.js"
-import { convertMeasurementToMeterAndKg } from "../../use-cases/bmi-calculator/convertMeasurementToMKg"
+import { convertMeasurementToMetric } from "../../use-cases/bmi-calculator/convertMeasurementToMKg"
 import { identifyBMIClassification } from "../../use-cases/bmi-calculator/identifyBMIClassification.js"
 
 export const calculateBMIController = async (
@@ -10,7 +10,7 @@ export const calculateBMIController = async (
     next: NextFunction
 ) : Promise<void> => {
     try {
-        const { height, weight } = convertMeasurementToMeterAndKg({
+        const { height, weight } = convertMeasurementToMetric({
             measurementUnit: req.body.measurementUnit,
             height: req.body.height,
             heightSecondary: req.body.heightSecondary,

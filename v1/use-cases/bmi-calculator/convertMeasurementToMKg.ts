@@ -1,6 +1,6 @@
 import { convertFtInToMeter, convertPoundsToKg } from "../../helpers/unitConversion.helper"
 
-export const convertMeasurementToMeterAndKg = ({
+export const convertMeasurementToMetric = ({
     measurementUnit,
     height,
     heightSecondary,
@@ -15,14 +15,14 @@ export const convertMeasurementToMeterAndKg = ({
     weight: number,
 } => {
     switch (measurementUnit) {
-        case 'FT_IN_AND_LBS':
+        case 'STANDARD':
             return {
                 height: convertFtInToMeter(height, heightSecondary || 0),
                 weight: convertPoundsToKg(weight)
             }
             
 
-        case 'M_AND_KG':
+        case 'METRIC':
             return {
                 height: height,
                 weight: weight

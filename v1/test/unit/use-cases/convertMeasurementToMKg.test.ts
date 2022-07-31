@@ -1,10 +1,10 @@
-import { convertMeasurementToMeterAndKg } from "../../../use-cases/bmi-calculator/convertMeasurementToMKg"
+import { convertMeasurementToMetric } from "../../../use-cases/bmi-calculator/convertMeasurementToMKg"
 import { expect } from "chai"
 
-describe("Convert Measurement to M and KG", () => {
-    it("Should convert measurement to M and KG", () => {
-        const { height, weight } = convertMeasurementToMeterAndKg({
-            measurementUnit: "M_AND_KG",
+describe("Convert Measurement to Metric", () => {
+    it("Should convert measurement to Metric", () => {
+        const { height, weight } = convertMeasurementToMetric({
+            measurementUnit: "METRIC",
             height: 1.6,
             weight: 95,
         })
@@ -14,9 +14,9 @@ describe("Convert Measurement to M and KG", () => {
         expect(weight).to.be.equal(95)
     })
 
-    it("Should convert measurement to M and KG (From Ft and Lbs)", () => {
-        const { height, weight } = convertMeasurementToMeterAndKg({
-            measurementUnit: "FT_IN_AND_LBS",
+    it("Should convert measurement to Metric (From Standard)", () => {
+        const { height, weight } = convertMeasurementToMetric({
+            measurementUnit: "STANDARD",
             height: 5,
             heightSecondary: 3,
             weight: 209.439,

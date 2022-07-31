@@ -1,7 +1,7 @@
 export default {
     measurement_units: [
-        'M_AND_KG',
-        'FT_IN_AND_LBS'
+        'METRIC',
+        'STANDARD'
     ],
     classifications: [
         {
